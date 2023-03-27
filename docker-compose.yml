@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_USER: root
+      MYSQL_DATABASE: mentoring_witi
+    volumes:
+      - ./initdb/initial.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+
+  app:
+    build: .
+    environment:
+      DATABASE_HOST: db
+      DATABASE_PORT: 3306
+      DATABASE_USER: root
+      DATABASE_NAME: mentoring_witi
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
