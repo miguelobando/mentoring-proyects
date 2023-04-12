@@ -1,11 +1,31 @@
-FROM node:16-alpine3.14
+FROM node:12.19-alpine AS build
 
 WORKDIR /app
 
-RUN npm install --fg yarn
-COPY package.json .
-COPY yarn.lock .
+COPY package.json package.json
+
+RUN ls -la /app
+
+RUN npm install global yarn
+
 RUN yarn install
-COPY . .
+
+FROM node:12.19-alpine
+
+WORKDIR /app
+
+RUN mkdir -p app/node_modules
+
+COPY --from=build /app/node_modules /app/node_modules
+
+COPY . /app/
+
+COPY tsconfig.build.json .
+
+RUN yarn build n-layer
+
+RUN ls -la
+
 EXPOSE 4000
-RUN yarn start n-layer
+
+CMD ["node", "dist/main.js"]
