@@ -27,10 +27,15 @@ export class ConfigService {
     this.envConfig.DATABASE_PORT = this.validateParam('DATABASE_PORT');
     this.envConfig.DATABASE_USER = this.validateParam('DATABASE_USER');
     this.envConfig.DATABASE_NAME = this.validateParam('DATABASE_NAME');
+    this.envConfig.DATABASE_PASSWORD = this.validateParam('DATABASE_PASSWORD');
   }
 
   get DATA_BASE_HOST(): string {
     return this.envConfig.DATABASE_HOST;
+  }
+
+  get DATA_BASE_PASSWORD(): string {
+    return this.envConfig.DATABASE_PASSWORD;
   }
 
   get DATA_BASE_PORT(): string {

@@ -8,6 +8,7 @@ export const Dbmysql = TypeOrmModule.forRoot({
   host: config.DATA_BASE_HOST,
   port: parseInt(config.DATA_BASE_PORT, 10),
   username: config.DATA_BASE_USER,
+  password: config.DATA_BASE_PASSWORD,
   database: config.DATA_BASE_NAME,
   synchronize: false,
   autoLoadEntities: true,
