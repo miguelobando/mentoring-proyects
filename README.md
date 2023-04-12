@@ -11,6 +11,6 @@ $ yarn start n-layer --watch
 ## Running the app n-layer with docker (DB included)
 
 ```bash
-# 
+
 $ docker-compose up
 ```
