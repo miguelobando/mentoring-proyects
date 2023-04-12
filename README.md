@@ -1,4 +1,4 @@
-## Running the app n-layer
+## Running the app n-layer outside docker
 
 ```bash
 # install dependencies
@@ -8,17 +8,9 @@ $ yarn install
 $ yarn start n-layer --watch
 
 ```
-
-## Test
+## Running the app n-layer with docker (DB included)
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# 
+$ docker-compose up
 ```
-
