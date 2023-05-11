@@ -35,6 +35,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/n-layer/tsconfig.app.json"
       }
+    },
+    "hexagonal": {
+      "type": "application",
+      "root": "apps/hexagonal",
+      "entryFile": "main",
+      "sourceRoot": "apps/hexagonal/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/hexagonal/tsconfig.app.json"
+      }
     }
   }
 }
