@@ -1,8 +1,8 @@
-import { Entity } from 'apps/hexagonal/src/shared/seedwork/Entity';
-import { ProductId } from './ProductId';
+import { Entity } from '../../../shared/seedwork/Entity';
 import { Category } from './Category';
+import { ProductId } from './ProductId';
 
-export class Produdct extends Entity<ProductId> {
+export class Product extends Entity<ProductId> {
   name: string;
   description: string;
   price: number;

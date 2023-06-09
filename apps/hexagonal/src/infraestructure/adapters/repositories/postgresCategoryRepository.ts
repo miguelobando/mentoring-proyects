@@ -5,4 +5,7 @@ export class PostgresCategoryRepository implements CategoryRepository {
   create(category: Category): Promise<Category> {
     throw new Error('Method not implemented.');
   }
+  findById(id: string): Promise<Category> {
+    throw new Error('Method not implemented.');
+  }
 }

@@ -13,6 +13,7 @@ describe('CategoryUseCases', () => {
           .mockReturnValue(
             Promise.resolve<Category>(new Category(new CategoryId())),
           ),
+        findById: jest.fn(),
       };
       categoryUseCases = new CategoryUseCases(categoryRepository);
       const result = await categoryUseCases.create({

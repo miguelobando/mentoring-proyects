@@ -1,3 +1,3 @@
-import { Uuid } from 'apps/hexagonal/src/shared/seedwork/Uuid';
+import { Uuid } from '../../../shared/seedwork/Uuid';
 
 export class ProductId extends Uuid {}
